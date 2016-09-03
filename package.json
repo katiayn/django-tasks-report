@@ -1,0 +1,14 @@
+{
+  "name": "django-tasks-report",
+  "version": "1.0.0",
+  "description": "Tasks report",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kátia Nakamura",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-material-design": "^0.5.10"
+  }
+}
