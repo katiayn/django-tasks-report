@@ -26,15 +26,21 @@ class Category(models.Model):
         return self.name
 
 
-class Commit(models.Model):
+class Task(models.Model):
     id_user = models.ForeignKey(User, blank=True, null=True, verbose_name='User')
     message = models.TextField(verbose_name='Message')  # message (commits[message])
     end_datetime = models.DateTimeField(verbose_name='Finished')  # end_datetime (commits[timestamp])
     start_datetime = models.DateTimeField(blank=True, null=True, verbose_name='Started')
-    url = models.URLField(max_length=255, verbose_name='Url')  # url (commits[url])
     reported = models.BooleanField(default=False, verbose_name='Reported')
     category = models.ForeignKey(Category, blank=True, null=True, verbose_name='Category')
-    repository = models.ForeignKey(Repository, verbose_name='Repository')
 
     def __str__(self):
         return self.message
+
+
+class Commit(Task):
+    url = models.URLField(max_length=255, verbose_name='Url')  # url (commits[url])
+    repository = models.ForeignKey(Repository, verbose_name='Repository')
+
+    def __str__(self):
+        return self.url
