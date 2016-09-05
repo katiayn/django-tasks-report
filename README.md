@@ -23,7 +23,13 @@ SECRET_KEY=<YOUR_SECRET_KEY_GOES_HERE>
 DEBUG=True
 ```
 
-5) Run the project:
+5) Run the migrations:
+
+```
+$ python manage.py migrate
+```
+
+6) Run the project:
 
 ```
 $ python manage.py runserver
